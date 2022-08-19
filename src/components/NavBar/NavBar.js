@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../Styles/navBar.css';
+import CartWidget from './as/CartWidget/CartWidget';
 
 
 const NavBar = () => {
@@ -31,7 +32,7 @@ const NavBar = () => {
                 <div className="col ">
                     <ul className="nav justify-content-end align-items-center">
                         <li className="nav-item">
-                            <button type="button" className="btn" style={{backgroundColor:'#5c7ca8', color:'white'}}><i className="bi bi-cart3"></i></button>  
+                            <CartWidget/>  
                         </li>
                         <li className="nav-item">
                             <button type="button" className="btn" style={{backgroundColor:'#5c7ca8', color:'white' }}>REGISTRARSE</button>

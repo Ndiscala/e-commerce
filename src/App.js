@@ -1,16 +1,20 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import Main from './components/Main.js/Main';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Footer from './components/Footer/Footer';
 
+
 function App() {
+  const saludo = 'Este es mi componente ItemListContainer';
+
   return (
     <div className="App">
-      <NavBar></NavBar>
+      <NavBar/>
 
-      <Main></Main>
+      <ItemListContainer saludo={saludo}/>
 
-      <Footer></Footer>
+      
+      <Footer/>
       
     </div>
   );
