@@ -1,28 +1,43 @@
-import ItemCount from "./ItemCount/ItemCount";
-import Card from 'react-bootstrap/Card';
+import { productos } from '../../mock/productos'
+import { useEffect, useState } from "react";
+import ItemList from "./ItemList/ItemList";
+
 
 
 const ItemListContainer = () => {
-    function onAdd(){
-        console.log('Function onAdd');
-      }
+    const [items, setItems] = useState([]);
 
-    return(
+    useEffect(() => {
 
-        <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src="imagenes/nft.jpg" />
-            <Card.Body>
-                <Card.Title>Producto X</Card.Title>
-                <Card.Text>
-                XXXXXXXXXXX
-                </Card.Text>
-                    <ItemCount stock={10} initial={1} onAdd={onAdd} />
-            </Card.Body>
-        </Card>
+        const getProducts = new Promise((res, rej) => {
+            setTimeout(() => res(productos), 2000)
+        });
+
+        getProducts
+            .then((productos) => {
+                setItems(productos);
+            })
+            .catch((error) => {
+                //console.log(error);
+            })
+
+    }, []);
+
+    
+
+    return (
+        <div>
             
-        
+            <ItemList items={items}  />
+            
+        </div>
     );
-}
+};
+
+    
+
+
+
 
 export default ItemListContainer;
 
