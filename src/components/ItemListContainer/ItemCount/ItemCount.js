@@ -1,6 +1,8 @@
 import React  from 'react';
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 
 function ItemCount ({ stock, initial, onAdd })  {
   const [count, setCount] = useState(1);
@@ -18,12 +20,14 @@ function ItemCount ({ stock, initial, onAdd })  {
   return (
     <div className=''>
         <div>
-                <Button onClick={sumar} variant="success">+</Button>
-                <Button onClick={restar} variant="warning">-</Button>
-                <p> Count: {count} </p>
+                <Button onClick={sumar} variant="outline-dark"  >+</Button>
+                <Button onClick={restar} variant="outline-dark" >-</Button>
+                <p> Cantidad: {count} </p>
         </div>
-        <div>
-                <Button onClick={onAdd} variant="outline-dark">Agregar al carrito</Button>
+        <div className=''>
+                <Link to="/detail/${item.id}">
+                    <Button variant="outline-dark" >Ver detalles</Button>
+                </Link>
 
         </div>
     </div>

@@ -16,7 +16,7 @@ const Footer = () => {
                 // style={{backgroundColor: '#263574'}}
                 href="https://ndiscala.github.io/"
                 role="button"
-                ><i className="bi bi-link-45deg"></i>
+                ><i className="bi bi-person-workspace fs-3"></i>
                 </a>
 
             {/* <!-- instagram --> */}
@@ -26,7 +26,7 @@ const Footer = () => {
                 // style={{backgroundColor: '#263574'}}
                 href="https://www.instagram.com/0usi/"
                 role="button"
-                ><i className="bi bi-instagram"></i>
+                ><i className="bi bi-instagram fs-3"></i>
                 </a>
 
             {/* <!-- Linkedin --> */}
@@ -34,14 +34,14 @@ const Footer = () => {
                 className="btn btn-primary btn-floating m-3"
                 // style={{backgroundColor: '#263574'}}
                 href="https://www.linkedin.com/in/ndiscala/"
-                role="button"><i className="bi bi-linkedin"></i>
+                role="button"><i className="bi bi-linkedin fs-3"></i>
                 </a>
             {/* <!-- Github --> */}
                 <a
                 className="btn btn-primary btn-floating m-3"
                 // style={{backgroundColor: '#263574'}}               
                 href="https://github.com/Ndiscala"
-                role="button"><i className="bi bi-github"></i>
+                role="button"><i className="bi bi-github fs-3"></i>
                 </a>
             
     

@@ -26,14 +26,14 @@ const Item = ({ title = 'Aleatoria',
                     {title}
                 </Card.Title>
                 <Card.Text>
-                    <h4>{price}</h4> 
-                    <p>{description}</p>
+                    <p>$ {price}</p> 
                     <p>{category}</p>
-                    <p>Stock: {stock}</p>
+                    
                 </Card.Text>
                     
             </Card.Body>
                 <ItemCount stock={10} initial={1} onAdd={onAdd} />
+                
             </Card>
 
 

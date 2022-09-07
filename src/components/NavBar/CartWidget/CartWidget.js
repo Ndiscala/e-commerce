@@ -1,16 +1,15 @@
 import Button from 'react-bootstrap/Button';
+import '../../../Styles/navBar.css';
+
 
 
 const CartWidget = () => {
     return(
         <Button 
-        variant='outline-light'
-        style={{backgroundColor:'#5c7ca8', color:'white' }}
-        >
-
-                <i className="bi bi-cart3"/>
-                
+        variant='outline-light'>
+              <i className="bi bi-cart-plus fs-5 text-black"></i>
         </Button>
+    
     )
 }
 

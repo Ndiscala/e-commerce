@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../Styles/navBar.css';
 import CartWidget from './CartWidget/CartWidget';
+import { Link } from 'react-router-dom';
+
 
 
 const NavBar = () => {
@@ -9,35 +11,45 @@ const NavBar = () => {
         <nav className="navBar container " >
             <div className="row">
                 <div className="col">
-                    <ul className="nav justify-content-start align-items-center ">
-                        <li className="nav-item">
-                        
-                                <button data-text="Awesome" className="button">
-                                <span className="actual-text">&nbsp;OUSI&nbsp;</span>
-                                <span className="hover-text" aria-hidden="true">&nbsp;OUSI&nbsp;</span>
+                    <ul className="nav justify-content-star align-items-center ">
+                        <li className="nav-item m-1">
+                            <Link to="/" >
+                                <button className="button fs-1">
+                                OUSI
                                 </button>
+                            </Link> 
+                                
 
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" aria-current="page" href="#" style={{color: 'white'}}>Productos</a>
+                        <li className="nav-item m-3">
+                            <Link to="/category/NFT" >
+                            <button type="button" className="btn"> NFT's</button>
+                            </Link>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#" style={{color: 'white'}}>Nosotros</a>
+                        <li className="nav-item m-3">
+                            <Link to="/category/DISCOS" >
+                                <button type="button" className="btn">Discos</button>
+                            </Link>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href='#' style={{color: 'white'}}>Contacto</a>
+                        <li className="nav-item m-3">
+                            <Link to="/category/Gorras" >
+                                <button type="button" className="btn"> Gorras</button>
+                            </Link>
                         </li>
                     </ul>
                 </div>
                 <div className="col ">
                     <ul className="nav justify-content-end align-items-center">
-                        <li className="nav-item">
-                            <CartWidget/>  
+                        <li className="nav-item ">
+                            <Link to='/cart'>
+                                <CartWidget/>
+                            </Link>
+                            
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item m-3">
                             <button type="button" className="btn" style={{backgroundColor:'#5c7ca8', color:'white' }}>REGISTRARSE</button>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item m-3">
                             <button type="button" className="btn" style={{backgroundColor:'#5c7ca8', color:'white' }}>INICIAR SESIÓN</button>
                         </li>
                     </ul>      

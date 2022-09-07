@@ -16,7 +16,6 @@ const ItemList = ({ items }) => {
                     title={item.title}
                     description={item.description}
                     price={item.price}
-                    stock= {item.stock}
                     category={item.category}  
                     /> )}
         </CardGroup>    

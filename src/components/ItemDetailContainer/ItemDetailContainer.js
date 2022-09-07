@@ -2,35 +2,34 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { productos } from "../../mock/productos";
 import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
 
 
 const ItemDetailContainer = () => {
-    const [products, setProducts] = useState({});
+    const [item, setItem] = useState({});
+  
+    const idProducto = useParams ();
 
-  //  const unicoProd = productos.find((producto) => producto.id === 2);
+    const idProdNum = Number(idProducto);
 
    useEffect(() => {
-
-    const getProducts = new Promise((res, rej) => {
-        setTimeout(() => res(productos), 2000)
+      const getProducts = () => 
+        new Promise((res, rej) => {
+          const productoUnico = productos.find((prod => prod.id === 7))
+          setTimeout(() => res(productoUnico), 500)
     });
 
-    getProducts
-        .then((productos) => {
-            setProducts(productos);
+    getProducts()
+        .then((data) => {
+            setItem(data);
         })
         .catch((error) => {
-            //console.log(error);
+            console.log(error);
         })
-
 }, []);
-
-   
-    
-
   return (
     <div>
-            <ItemDetail />
+            <ItemDetail item={item} />
             
     </div>
   )
