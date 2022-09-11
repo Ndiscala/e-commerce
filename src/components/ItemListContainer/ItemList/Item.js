@@ -1,40 +1,34 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import ItemCount from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import '../../../Styles/Item.css';
 
-const Item = ({ title = 'Aleatoria',
-    description='asd',
-    price= 300,
-    stock= 10,
-    category= 'Monos NFT',    
-    img= 'imagenes/monos.jpg'
-    }) => { 
-    
-
-    const onAdd = () => {
-        console.log('Funcion onAdd');
-    }
-
-   
+const Item = ({ item  }) => { 
 
   return (
     <div>
-            <Card style={{ width: '16rem' }} className="m-5" >
-                <Card.Img variant="top" src={img} />
-            <Card.Body>
+        <Card style={{ width: '16rem' }} className="card m-5 " >
+            
+                <Card.Img variant="top" src={item.img} className='card-img' />
+            
+                <Card.Body>
                 <Card.Title>
-                    {title}
+                    <p>{item.title}</p>
+                    
                 </Card.Title>
-                <Card.Text>
-                    <p>$ {price}</p> 
-                    <p>{category}</p>
+                    <Card.Text>
+                    <p>$ {item.price}</p> 
+                    <p>#{item.category}</p>
+
+                    <Link to={`/detail/${item.id}`}>
+                    <Button variant="outline-light" >Ver detalles</Button>
+                    </Link>
                     
-                </Card.Text>
-                    
-            </Card.Body>
-                <ItemCount stock={10} initial={1} onAdd={onAdd} />
-                
-            </Card>
+                    </Card.Text>       
+                </Card.Body>
+            
+        </Card>
 
 
     </div>

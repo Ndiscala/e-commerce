@@ -1,0 +1,13 @@
+.enlace{
+    background-color: #f5f5f5;
+    border: none;
+}
+.enlace:hover{
+    border: #006fff 0.1em solid;
+    background-color: #f000;
+    
+}
+.foot{
+    color: rgb(0, 0, 0);
+}
+

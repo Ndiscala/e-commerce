@@ -14,7 +14,7 @@ const NavBar = () => {
                     <ul className="nav justify-content-star align-items-center ">
                         <li className="nav-item m-1">
                             <Link to="/" >
-                                <button className="button fs-1">
+                                <button className=" fs-1">
                                 OUSI
                                 </button>
                             </Link> 
@@ -23,17 +23,17 @@ const NavBar = () => {
                         </li>
                         <li className="nav-item m-3">
                             <Link to="/category/NFT" >
-                            <button type="button" className="btn"> NFT's</button>
+                            <button type="button" className="btn button"> NFT's</button>
                             </Link>
                         </li>
                         <li className="nav-item m-3">
                             <Link to="/category/DISCOS" >
-                                <button type="button" className="btn">Discos</button>
+                                <button type="button" className="btn button">Discos</button>
                             </Link>
                         </li>
                         <li className="nav-item m-3">
                             <Link to="/category/Gorras" >
-                                <button type="button" className="btn"> Gorras</button>
+                                <button type="button" className="btn button"> Gorras</button>
                             </Link>
                         </li>
                     </ul>
@@ -47,10 +47,10 @@ const NavBar = () => {
                             
                         </li>
                         <li className="nav-item m-3">
-                            <button type="button" className="btn" style={{backgroundColor:'#5c7ca8', color:'white' }}>REGISTRARSE</button>
+                            <button type="button" className="btn button" >REGISTRARSE</button>
                         </li>
                         <li className="nav-item m-3">
-                            <button type="button" className="btn" style={{backgroundColor:'#5c7ca8', color:'white' }}>INICIAR SESIÓN</button>
+                            <button type="button" className="btn button" >INICIAR SESIÓN</button>
                         </li>
                     </ul>      
                 </div>

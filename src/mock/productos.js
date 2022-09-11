@@ -1,32 +1,32 @@
 export const productos = [
     {id: 1,
-    title: 'Nft Monkeys',
+    title: 'Monkey 1',
     description:'Realizado por.....',
     price: 1080,
     stock: 10,
     category: 'NFT',
-    img: '/imagenes/nft.jpg'
+    img: '/imagenes/monkey.jpg'
     },
     {id: 2,
-    title: 'NFT',
+    title: 'Monkey 2',
     description:'Hecho por NDAG',
     price: 250,
     stock: 4,
     category: 'NFT',
-    img: '/imagenes/monos.jpg'
+    img: '/imagenes/monkey2.png'
     },
     {id: 3,
-    title: 'NFT',
+    title: 'Monkey 3',
     description:'¬¬¬¬¬¬',
     price: 1300,
     stock: 2,
     category: 'NFT',    
-    img: '/imagenes/ousi.jpg'
+    img: '/imagenes/monkey3.png'
     },
     {               
     id: 4,
-    title: 'NFT MONKEYS',
-    description:'¬¬¬¬¬¬',
+    title: 'Isla de caras',
+    description:'Tapa de disco',
     price: 1300,
     stock: 2,
     category: 'DISCOS',    
@@ -34,21 +34,21 @@ export const productos = [
     },
     {               
     id: 5,
-    title: 'NFT MONKEYS',
-    description:'¬¬¬¬¬¬',
+    title: 'Tapa de Disco',
+    description:'The office',
     price: 1300,
     stock: 2,
     category: 'DISCOS',    
-    img: '/imagenes/isladecaras.jpg'
+    img: '/imagenes/nft.jpg'
     },
     {               
     id: 6,
-    title: 'NFT MONKEYS',
-    description:'¬¬¬¬¬¬',
+    title: 'Tapa de disco',
+    description:'Memes',
     price: 1300,
     stock: 2,
     category: 'DISCOS',    
-    img: '/imagenes/isladecaras.jpg'
+    img: '/imagenes/ousi.jpg'
     },
     {               
     id: 7,
@@ -57,7 +57,7 @@ export const productos = [
     price: 1300,
     stock: 5,
     category: 'Gorras',    
-    img: '/imagenes/gorra3.jpg'
+    img: '/imagenes/gorra1.jpg'
     },
     {               
     id: 8,
@@ -66,7 +66,7 @@ export const productos = [
     price: 300,
     stock: 6,
     category: 'Gorras',    
-    img: '/imagenes/gorra3.jpg'
+    img: '/imagenes/gorra2.jpg'
     },
     {               
     id: 9,
@@ -75,7 +75,7 @@ export const productos = [
     price: 1100,
     stock: 2,
     category: 'Gorras',    
-    img: '/imagenes/gorra3.jpg'
+    img: '/imagenes/gorra4.jpg'
     }
     
 ]

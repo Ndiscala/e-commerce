@@ -8,15 +8,17 @@ import { useParams } from "react-router-dom";
 const ItemDetailContainer = () => {
     const [item, setItem] = useState({});
   
-    const idProducto = useParams ();
+    const { idProducto }= useParams ();
 
-    const idProdNum = Number(idProducto);
+    
 
    useEffect(() => {
       const getProducts = () => 
         new Promise((res, rej) => {
-          const productoUnico = productos.find((prod => prod.id === 7))
-          setTimeout(() => res(productoUnico), 500)
+          const productoUnico = productos.find((prod => prod.id === Number(idProducto)));
+          setTimeout(() => {
+            res(productoUnico)
+          }, 500)
     });
 
     getProducts()
