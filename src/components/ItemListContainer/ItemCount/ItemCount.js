@@ -4,19 +4,16 @@ import { useState } from 'react';
 
 
 function ItemCount ({ stock, initial, onAdd })  {
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(initial);
 
 
-  const sumar = () =>{
-    (count < 10) ? setCount(count + 1) : console.log('stock maximo');
-  }  
+  const sumar = () => {
+    count < stock && setCount(count + 1);
+  };  
 
   const restar = () =>{
-    (count > 1) ? setCount(count - 1) : console.log('stock minimo permitido');
-    
+    setCount(count - 1);
   }
-
-  
 
   return (
     <div className='m-3'>
@@ -27,7 +24,7 @@ function ItemCount ({ stock, initial, onAdd })  {
         </div>
         <div className=''>
                 
-                <Button variant="outline-dark mt-3" >Agregar al carrito</Button>
+                <Button variant="outline-dark mt-3" onClick={() => onAdd(count)} >Agregar al carrito</Button>
 
 
         </div>

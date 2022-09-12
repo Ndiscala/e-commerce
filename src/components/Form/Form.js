@@ -9,11 +9,9 @@ const Form = () => {
         event.preventDefault();
         console.log(event);
     }
-
     const handleChangeName = (event) => {
         setName(event.target.value)
     }
-
     const handleChangeDireccion = (event) => {
         setDireccion(event.target.value)
     }
@@ -31,16 +29,19 @@ const Form = () => {
             <input 
                 type='text'
                 placeholder='Name..'
+                name='nombre'
                 value={name} 
                 onChange={handleChangeName}/>
             <input 
                 type='text' 
                 placeholder='Direccion' 
+                name='direccion'
                 value={direccion}
                 onChange={handleChangeDireccion}/>
             <input 
                 type='number' 
-                placeholder='Contact' 
+                placeholder='Contact'
+                name='contact'
                 value={contact}
                 onChange={handleChangeContact} />
             <button>Enviar</button>
