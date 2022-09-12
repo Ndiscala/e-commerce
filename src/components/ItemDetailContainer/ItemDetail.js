@@ -3,6 +3,10 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ItemCount from '../ItemListContainer/ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+
+
 
 
 
@@ -28,12 +32,14 @@ const ItemDetail = ({ item }) => {
               <h3>{item.description}</h3>
               <h3>$ {item.price}</h3>      
               
-             <ItemCount stock={item.stock} onAdd={onAdd} initial={1}/>
+            
 
               {cantidad === 0 ? (
-                   <h4>Cantidad: 0</h4>
+                   <ItemCount stock={item.stock} onAdd={onAdd} initial={1}/>
                   )   : (
-                    <h4>Cantidad: {cantidad}</h4>
+                    <Link to="/cart"> 
+                    <button type="button" className="btn button" >Ir al carrito</button>
+                    </Link>
                   )}
 
             
