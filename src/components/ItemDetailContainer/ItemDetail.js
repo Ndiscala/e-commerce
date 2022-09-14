@@ -1,23 +1,21 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ItemCount from '../ItemListContainer/ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-
-
-
-
-
+import { CartContext } from '../context/CartContext';
 
 
 const ItemDetail = ({ item }) => {
 
   const [cantidad, setCantidad] = useState(0);
+  const { addToCart } = useContext(CartContext) 
 
-  const onAdd = (arg) => {
-    setCantidad(arg);
+  const onAdd = (cantidadItem) => {
+    setCantidad(cantidadItem);
+    addToCart(item, cantidadItem);
   }
   
     return (
@@ -38,7 +36,7 @@ const ItemDetail = ({ item }) => {
                    <ItemCount stock={item.stock} onAdd={onAdd} initial={1}/>
                   )   : (
                     <Link to="/cart"> 
-                    <button type="button" className="btn button" >Ir al carrito</button>
+                    <Button type="button" className="btn button" >Ir al carrito</Button>
                     </Link>
                   )}
 
