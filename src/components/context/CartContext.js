@@ -19,6 +19,15 @@ const CartProvider = ({ children }) => {
     const isInCart = (id) => {
         return cart.some((prod) => prod.id === id);
     };
+
+    //PRECIO TOTAL DEL CARRITO
+    const totalPrice = () => {
+        let acumulador = 0;
+        cart.forEach((prod) => {
+            acumulador += prod.cantidad * prod.price;
+        });
+        return acumulador;
+    };
     
     const addItem = (item, cantidad) => {
         const carritoActualizado = cart.map((prod) => {
@@ -55,7 +64,7 @@ const CartProvider = ({ children }) => {
 
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, clear, removeItem }}>
+    <CartContext.Provider value={{ cart, addToCart, clear, removeItem, totalPrice }}>
                 {children}
     </CartContext.Provider>
   )
