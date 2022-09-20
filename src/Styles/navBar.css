@@ -18,7 +18,7 @@ header{
   font-weight: 500;
   }
 
-.button:hover {
+.button:hover{
   background-color: #2a82fd;
   color: #fff;
   border-color: black;

@@ -52,7 +52,7 @@ export const productos = [
     },
     {               
     id: 7,
-    title: 'Gorra Vans',
+    title: 'Gorra BONDI & CO',
     description:'Azul',
     price: 1300,
     stock: 5,
@@ -61,21 +61,47 @@ export const productos = [
     },
     {               
     id: 8,
-    title: 'Gorra Vans',
+    title: 'Gorra BONDI & CO',
     description:'Rojo',
-    price: 300,
+    price: 4300,
     stock: 6,
     category: 'Gorras',    
     img: '/imagenes/gorra2.jpg'
     },
     {               
     id: 9,
-    title: 'Gorra Vans',
+    title: 'Gorra BONDI & CO',
     description:'Azul',
-    price: 1100,
+    price: 5100,
     stock: 2,
     category: 'Gorras',    
     img: '/imagenes/gorra4.jpg'
+    },
+    {               
+    id: 10,
+    title: 'Nft XXX',
+    description:'Creado por XXX',
+    price: 1100,
+    stock: 4,
+    category: 'NFT',    
+    img: '/imagenes/monkey4.jpg'
+    },
+    {  
+    id: 11,
+    title: 'DISCO XXX',
+    description:'Disco de XXX',
+    price: 5100,
+    stock: 6,
+    category: 'DISCOS',    
+    img: '/imagenes/isladecaras.jpg'
+    },
+    {               
+    id: 12,
+    title: 'Gorra BONDI & CO',
+    description:'',
+    price: 3800,
+    stock: 7,
+    category: 'Gorras',    
+    img: '/imagenes/gorra5.jpg'
     }
-    
 ]

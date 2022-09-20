@@ -7,8 +7,8 @@ import '../../../Styles/Item.css';
 const Item = ({ item  }) => { 
 
   return (
-    <div>
-        <Card style={{ width: '16rem' }} className="card m-5 " >
+    <div >
+        <Card style={{ width: '16rem' }} className="card m-4" >
             
                 <Card.Img variant="top" src={item.img} className='card-img' />
             
