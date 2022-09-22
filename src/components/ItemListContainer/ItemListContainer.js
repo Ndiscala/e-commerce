@@ -1,4 +1,3 @@
-// import { productos } from '../../mock/productos'
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import ItemList from "./ItemList/ItemList";
@@ -16,8 +15,11 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         const itemCollection = collection(db, "productos");
-        const q = query(itemCollection, where("category","==", "NFT"  ))
-        getDocs(itemCollection)
+
+        const referencia = categoryName
+            ? query(itemCollection, where("category","==", categoryName  ))
+            : itemCollection;
+        getDocs(referencia)
         .then((resp) =>{
             const products = resp.docs.map((prod) => {
                 return {
@@ -57,31 +59,5 @@ const ItemListContainer = () => {
     );
 };
 
-    
-
-
-
-
 export default ItemListContainer;
 
-// const getProducts = () => 
-            // new Promise((res, rej) => {
-            //     const prodFiltrados = productos.filter(
-            //         (prod) => prod.category === categoryName);
-            //     setTimeout(() => {
-            //         res( categoryName ? prodFiltrados : productos)}
-            //         , 1000);
-            // });
-    
-            // getProducts()
-            //     .then((data) => {
-            //         setItems(data);
-            //         setIsLoading(false);
-            //     })
-            //     .catch((error) => {
-            //         //console.log(error);
-            //     })
-                
-            //     return () => {
-            //         setIsLoading(true);
-            //     };
