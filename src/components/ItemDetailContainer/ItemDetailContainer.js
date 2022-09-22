@@ -1,8 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { productos } from "../../mock/productos";
+// import { productos } from "../../mock/productos";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import { db } from "../../firebaseConfig";
+import { getDoc, doc, collection } from "firebase/firestore";
 
 
 const ItemDetailContainer = () => {
@@ -13,22 +15,15 @@ const ItemDetailContainer = () => {
     
 
    useEffect(() => {
-      const getProducts = () => 
-        new Promise((res, rej) => {
-          const productoUnico = productos.find((prod => prod.id === Number(idProducto)));
-          setTimeout(() => {
-            res(productoUnico)
-          }, 500)
-    });
-
-    getProducts()
-        .then((data) => {
-            setItem(data);
+      const itemCollection = collection(db, "productos")
+      const ref = doc(itemCollection, idProducto)
+      getDoc(ref).then((res) => {
+        setItem({
+          id: res.id,
+          ...res.data()
         })
-        .catch((error) => {
-            console.log(error);
-        })
-}, []);
+      })
+}, [idProducto]);
   return (
     <div>
             <ItemDetail item={item} />
