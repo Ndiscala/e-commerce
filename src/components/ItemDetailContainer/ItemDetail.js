@@ -8,14 +8,16 @@ import Button from 'react-bootstrap/Button';
 import { CartContext } from '../context/CartContext';
 
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ id, item }) => {
 
   const [cantidad, setCantidad] = useState(0);
-  const { addToCart } = useContext(CartContext) 
+  const { addToCart, getProductQuantity } = useContext(CartContext) 
 
-  const onAdd = (cantidadItem) => {
-    setCantidad(cantidadItem);
-    addToCart(item, cantidadItem);
+ 
+
+  const onAdd = (cantidad) => {
+    setCantidad(cantidad);
+    addToCart(item, cantidad);
   }
   
     return (
@@ -32,17 +34,13 @@ const ItemDetail = ({ item }) => {
               
             
 
-              {cantidad === 0 ? (
+              { cantidad === 0 ? (
                    <ItemCount stock={item.stock} onAdd={onAdd} initial={1}/>
                   )   : (
                     <Link to="/cart"> 
                     <Button type="button" className="btn button" >Ir al carrito</Button>
                     </Link>
                   )}
-
-            
-
-              
             </Col>
         </Row>
     </Container>

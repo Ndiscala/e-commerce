@@ -8,6 +8,8 @@ const Cart = () => {
 
   const total = totalPrice();
 
+  
+
   return (
     <div>
          { cart.map((prod) => (

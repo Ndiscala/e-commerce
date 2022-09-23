@@ -15,7 +15,7 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         const itemCollection = collection(db, "productos");
-
+        
         const referencia = categoryName
             ? query(itemCollection, where("category","==", categoryName  ))
             : itemCollection;

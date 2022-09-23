@@ -1,12 +1,35 @@
-import React, { createContext, useState } from 'react'
-
+import React, { createContext, useState, useEffect, useRef } from 'react';
 
 export const CartContext = createContext()
 
 
-
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
+    const [unidades, setUnidades] = useState(0);
+    const [total, setTotal] = useState(0)
+
+    const countRendersRef = useRef(0)
+
+ 
+ 
+    useEffect(() => {
+        console.log(countRendersRef.current)
+        if(countRendersRef.current > 0 ) {
+            let unidades = 0;
+            let total = 0
+            cart.forEach(prod => {
+                unidades += prod.quantity
+                total += prod.quantity * prod.price
+            });
+    
+            setUnidades(unidades)
+            setTotal(total)
+        } else {
+            console.log('primer render')
+        }
+        countRendersRef.current++
+    }, [cart])
+
 
     const addToCart = (item, cantidad) => {
         if (isInCart(item.id)) {
@@ -27,6 +50,15 @@ const CartProvider = ({ children }) => {
             acumulador += prod.cantidad * prod.price;
         });
         return acumulador;
+    };
+
+    //CANTIDAD DE PROD
+    const totalQuantity = () => {
+        let acumulador = 0;
+        cart.forEach((prod) => {
+            acumulador += prod.cantidad;
+        });
+        setUnidades(acumulador);
     };
     
     const addItem = (item, cantidad) => {
@@ -49,8 +81,6 @@ const CartProvider = ({ children }) => {
     // Eliminar producto
 
     const removeItem = (id) => {
-        console.log(`eliminé producto ${id}`);
-        //setCart(cart.filter((prod) => prod.id !== id));
         const carritoFiltrado = cart.filter((prod) => prod.id !== id);
         setCart(carritoFiltrado);
     };
@@ -62,9 +92,20 @@ const CartProvider = ({ children }) => {
         setCart([]);
     };
 
+    
+
+    const totalQuantityWidget = () => {
+        let acumulador = 0;
+        cart.forEach((product) =>{
+            acumulador += product.cantidad;
+        });
+        return acumulador;
+    }
+
+   
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, clear, removeItem, totalPrice }}>
+    <CartContext.Provider value={{ cart, addToCart, clear, removeItem, totalPrice, totalQuantityWidget }}>
                 {children}
     </CartContext.Provider>
   )
