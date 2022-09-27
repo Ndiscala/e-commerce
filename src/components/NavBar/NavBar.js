@@ -1,11 +1,34 @@
 import React from 'react';
 import '../../Styles/navBar.css';
 import CartWidget from './CartWidget/CartWidget';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { db } from "../../firebaseConfig";
+import { collection, getDocs } from "firebase/firestore";
+import { useEffect, useState } from 'react';
+
 
 
 
 const NavBar = () => {
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+      const collectionCat = collection(db, 'categorias')
+    
+      getDocs(collectionCat)
+      .then((res) => {
+        const categorias = res.docs.map((cat) => {
+            return { id: cat.id,
+                    ...cat.data(),
+                };
+            });
+            setCategories(categorias);
+        });
+    }, [])
+
+
+    
+
   return (
     <header>
         <nav className="navBar container " >
@@ -21,20 +44,13 @@ const NavBar = () => {
                                 
 
                         </li>
-                        <li className="nav-item m-3">
-                            <Link to="/category/NFT" >
-                            <button type="button" className="btn button"> NFT's</button>
-                            </Link>
-                        </li>
-                        <li className="nav-item m-3">
-                            <Link to="/category/DISCOS" >
-                                <button type="button" className="btn button">Discos</button>
-                            </Link>
-                        </li>
-                        <li className="nav-item m-3">
-                            <Link to="/category/Gorras" >
-                                <button type="button" className="btn button"> Gorras</button>
-                            </Link>
+                        <li>
+                           {categories.map((cat) => {
+                                <Link key={cat.id} to={`/category/${cat.route}`} > 
+                                    
+                                    <button type="button" className="btn button"> {cat.name}  </button>
+                                </Link>
+                           }) }
                         </li>
                     </ul>
                 </div>

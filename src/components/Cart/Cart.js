@@ -1,14 +1,28 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { CartContext } from '../context/CartContext';
 import Button from 'react-bootstrap/Button';
+import Form from '../Form/Form';
 
 
 const Cart = () => {
+
+  const [idCompra, setIdCompra] = useState('');
   const {cart, clear, removeItem, totalPrice } = useContext(CartContext);
 
   const total = totalPrice();
 
-  
+  const handleId = (id) => {
+    setIdCompra(id);
+  }
+
+  if(idCompra){
+    return <h1>Gracias por tu compra!tu id es: {idCompra} </h1>
+        
+  }
+
+  if(cart.length === 0) {
+    return <h2> Aún no tienes productos en el carrito</h2>
+  }
 
   return (
     <div>
@@ -39,6 +53,7 @@ const Cart = () => {
                     }} >
                   <Button onClick={clear}  variant='dark' size="lg">Limpiar carrito</Button>
                   <h4 style={{margin: '20px'}}>Total: ${total}</h4>
+                  <Form cart={cart} total={total} clear={clear} handleId={handleId}/>
                 </div>
     </div>
   );
