@@ -1,18 +1,25 @@
 import React  from 'react';
 import Button from 'react-bootstrap/Button';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
-function ItemCount ({ stock, initial, onAdd })  {
+function ItemCount ({ stock, onAdd, initial = 1 })  {
   const [count, setCount] = useState(initial);
 
+  useEffect(() => {
+    setCount(initial);
+  }, [initial]);
 
   const sumar = () => {
     count < stock && setCount(count + 1);
   };  
 
   const restar = () =>{
-    setCount(count - 1);
+    if (count > initial) {
+          setCount(count - 1);
+      } else {
+          console.log('Minimo stock');
+      }
   }
 
   return (

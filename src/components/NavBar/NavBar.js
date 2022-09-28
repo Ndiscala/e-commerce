@@ -35,22 +35,31 @@ const NavBar = () => {
             <div className="row">
                 <div className="col">
                     <ul className="nav justify-content-star align-items-center ">
-                        <li className="nav-item m-1">
+                        <li className="nav-item m-2">
                             <Link to="/" >
                                 <button className=" fs-1">
                                 OUSI
                                 </button>
                             </Link> 
-                                
-
                         </li>
-                        <li>
-                           {categories.map((cat) => {
-                                <Link key={cat.id} to={`/category/${cat.route}`} > 
-                                    
-                                    <button type="button" className="btn button"> {cat.name}  </button>
-                                </Link>
-                           }) }
+
+                        <li className='m-2'>
+                            <NavLink to="/category/NFT">
+                                 <button>NFT</button>
+                            </NavLink>       
+                        </li>
+                        <li className='m-2'>
+                            <NavLink to="/category/DISCOS">
+                            <button>DISCOS</button>
+                                
+                            </NavLink>  
+                        </li>
+
+                        <li className='m-2'>
+                            <NavLink to="/category/Gorras">
+                            <button>Gorras</button>
+                                
+                            </NavLink>  
                         </li>
                     </ul>
                 </div>
