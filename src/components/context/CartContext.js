@@ -13,7 +13,7 @@ const CartProvider = ({ children }) => {
  
  
     useEffect(() => {
-        console.log(countRendersRef.current)
+        
         if(countRendersRef.current > 0 ) {
             let unidades = 0;
             let total = 0
@@ -76,7 +76,7 @@ const CartProvider = ({ children }) => {
         setCart(carritoActualizado);
     };
 
-    console.log(cart);
+    
 
     // Eliminar producto
 

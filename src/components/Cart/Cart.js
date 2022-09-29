@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react'
 import { CartContext } from '../context/CartContext';
 import Button from 'react-bootstrap/Button';
 import Form from '../Form/Form';
+import { Link } from 'react-router-dom';
+
 
 
 const Cart = () => {
@@ -16,12 +18,32 @@ const Cart = () => {
   }
 
   if(idCompra){
-    return <h1>Gracias por tu compra!tu id es: {idCompra} </h1>
-        
+    return <div style={{display: 'flex',
+                        marginTop: '30 px'}}>
+                <h2 style={{
+                display: 'flex',
+                justifyContent: 'center',
+                }}> 
+                    Gracias por tu compra! tu id es: {idCompra}</h2>
+            </div>
   }
 
   if(cart.length === 0) {
-    return <h2> Aún no tienes productos en el carrito</h2>
+    return <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  marginTop: '70px'
+                  }}>
+              <h2 style={{
+                display: 'flex',
+                justifyContent: 'center',
+                marginBottom: '50px'
+              }}> Aún no tienes productos en el carrito.</h2>
+              <Link to="/" style={{display: 'flex',
+                                  justifyContent: 'center'}}>
+                                  <Button type="button" className="btn button" >Ir al Inicio</Button></Link>
+          
+            </div>
   }
 
   return (
