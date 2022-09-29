@@ -1,6 +1,6 @@
 # E-commerce OUSI
 
-
+Proyecto realizado para el curso de React Js, dictado por la plataforma de Coderhouse.
 
 ## Datos
 
@@ -8,6 +8,7 @@
     <li>Curso: React js</li>
     <li>Comisión: 37080</li>
     <li>Profesor: Eric Wajnrajch </li>
+    <li>Tutor: Arturo Grottoli </li>
     <li>Alumno: Nicolas Di Scala</li>
 </ul>
 
